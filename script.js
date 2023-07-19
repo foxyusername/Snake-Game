@@ -89,8 +89,12 @@ function deathParams(){
   canvas.style.boxShadow="0 0 7px 5px rgb(238, 5, 5)";
   canvas.style.border="2px solid red";
 
-  if(canvas.width<800){
-   snake_array=[]
+  if(canvas.width>600 && canvas.width<900){
+    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5];
+  }else if(canvas.width<600){
+    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5,5];
+  }else{
+    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
   }
 
 }
