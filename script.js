@@ -15,7 +15,7 @@ function all(){
 
   let rectX=canvas.width / 2;
   let rectY=canvas.height / 2 ;
-    let snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
+    let snake_array;
 
 
     let right='d';
@@ -28,18 +28,24 @@ function all(){
      if(canvas.width>1500){
       vectorX=11;
       speed=11; 
+      snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
    }else if(canvas.width>1200 && canvas.width<1500){
         vectorX=9;
         speed=9;
+        snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
       }else if(canvas.width>900 && canvas.width<1200){
        vectorX=7;
        speed=7;
+      snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
+
       }else if(canvas.width>600 && canvas.width<900){
         vectorX=4;
         speed=4;
+        snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5];
       }else if(canvas.width<600){
       vectorX=3;
      speed=3;
+     snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5,5];
     }
     let vectorY=0;
     let snakeWidth=canvas.width/37;
@@ -59,7 +65,6 @@ let swipeEndX = 0;
 let swipeStartY = 0;
 let swipeEndY = 0;
 let allowed=false;
-let deathtype='';
 // Mobile devices (touchscreen devices);
 
 window.addEventListener('touchstart', (e) => {
@@ -78,12 +83,16 @@ function deathParams(){
   lostGame.style.display='block';
   vectorX=0;
   vectorY=0;
-  snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
   endScore.innerText='🎉 your score is: '+eatCount+' 🎉';
   eatCount=0;
   scoreView.innerText='0';
   canvas.style.boxShadow="0 0 7px 5px rgb(238, 5, 5)";
   canvas.style.border="2px solid red";
+
+  if(canvas.width<800){
+   snake_array=[]
+  }
+
 }
 
 
@@ -154,8 +163,6 @@ function calcSwipe() {
 
   function refresh(){
    
- deathtype='';
-
   if(canvas.width>1500){
     vectorX=11;
     speed=11; 
