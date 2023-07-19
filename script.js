@@ -30,8 +30,8 @@ function all(){
       speed=11; 
       snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
    }else if(canvas.width>1200 && canvas.width<1500){
-        vectorX=9;
-        speed=9;
+        vectorX=8;
+        speed=8;
         snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
       }else if(canvas.width>900 && canvas.width<1200){
        vectorX=7;
@@ -41,11 +41,11 @@ function all(){
       }else if(canvas.width>600 && canvas.width<900){
         vectorX=4;
         speed=4;
-        snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5];
+        snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5];
       }else if(canvas.width<600){
       vectorX=3;
      speed=3;
-     snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5,5];
+     snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5];
     }
     let vectorY=0;
     let snakeWidth=canvas.width/37;
@@ -90,9 +90,9 @@ function deathParams(){
   canvas.style.border="2px solid red";
 
   if(canvas.width>600 && canvas.width<900){
-    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5];
+    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5];
   }else if(canvas.width<600){
-    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5,5];
+    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5];
   }else{
     snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
   }
