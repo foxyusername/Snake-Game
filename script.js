@@ -28,7 +28,6 @@ function all(){
      if(canvas.width>1500){
       vectorX=11;
       speed=11; 
-      alert(vectorX +'from start');
       snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
    }else if(canvas.width>1200 && canvas.width<1500){
      vectorX=9;    
