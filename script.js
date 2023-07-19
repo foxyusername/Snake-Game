@@ -23,18 +23,22 @@ function all(){
     let bottom='s';
      let vectorX;
      let speed;
-    if(canvas.width>1200){
-      vectorX=10;
-      speed=10;
+ 
+  if(canvas.width>1500){
+    vectorX=11;
+    speed=11; 
+ }else if(canvas.width>1200 && canvas.width<1500){
+      vectorX=9;
+      speed=9;
     }else if(canvas.width>900 && canvas.width<1200){
-     vectorX=8;
-     speed=8;
+     vectorX=7;
+     speed=7;
     }else if(canvas.width>600 && canvas.width<900){
-      vectorX=6;
-      speed=6;
+      vectorX=5;
+      speed=5;
     }else if(canvas.width<600){
-    vectorX=4;
-   speed=4;
+    vectorX=3;
+   speed=3;
   }
     let vectorY=0;
     let snakeWidth=canvas.width/37;
@@ -122,12 +126,28 @@ function calcSwipe() {
 }
 
   function refresh(){
-    vectorX=5;
+   
+    if(canvas.width>1500){
+      vectorX=11;
+      speed=11; 
+   }else if(canvas.width>1200 && canvas.width<1500){
+        vectorX=9;
+        speed=9;
+      }else if(canvas.width>900 && canvas.width<1200){
+       vectorX=7;
+       speed=7;
+      }else if(canvas.width>600 && canvas.width<900){
+        vectorX=5;
+        speed=5;
+      }else if(canvas.width<600){
+      vectorX=3;
+     speed=3;
+    }
+   
     vectorY=0;
     snake_array[0].x=rectX;
     snake_array[0].y=rectY;
     drawFood();
-    speed=5;
     canvas.style.border="3px solid black";
     canvas.style.boxShadow="none";
   }
