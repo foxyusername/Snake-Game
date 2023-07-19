@@ -21,7 +21,21 @@ function all(){
     let left='a';
     let top='w';
     let bottom='s';
-    let vectorX=5;
+     let vectorX;
+     let speed;
+    if(canvas.width>1200){
+      vectorX=10;
+      speed=10;
+    }else if(canvas.width>900 && canvas.width<1200){
+     vectorX=8;
+     speed=8;
+    }else if(canvas.width>600 && canvas.width<900){
+      vectorX=6;
+      speed=6;
+    }else if(canvas.width<600){
+    vectorX=4;
+   speed=4;
+  }
     let vectorY=0;
     let snakeWidth=canvas.width/37;
     let snakeHeight=canvas.height/32;
@@ -34,8 +48,6 @@ function all(){
     let foodX=Math.random() * borderWidth;
     let foodY=Math.random() * borderHeight;
     let eatCount=0;
-    let speed=5;
-
 
 let swipeStartX = 0;
 let swipeEndX = 0;
@@ -151,8 +163,8 @@ function eatFood(){
     foodX=Math.random() * canvas.width;
     foodY=Math.random() * canvas.height;
     eatCount+=1;
-   scoreView.innerText=eatCount;
-   
+    console.log(speed,vectorX);
+   scoreView.innerText=eatCount;   
    if(eatCount % 5===0){
     speed+=1.2;
    }
@@ -160,9 +172,11 @@ function eatFood(){
 }
 }
 
+console.log(vectorX,speed);
+
 
 function moveSnake(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.clearRect(0,0,canvas.width,canvas.height);
     drawFood();
   let head={x: snake_array[0].x + vectorX , y: snake_array[0].y + vectorY}
   if(snake_array[0].x+snakeWidth>=canvas.width ||snake_array[0].x<=0 || snake_array[0].y<=0 || snake_array[0].y+snakeHeight>=canvas.height){
