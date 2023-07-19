@@ -21,7 +21,7 @@ function all(){
     let left='a';
     let top='w';
     let bottom='s';
-    let vectorX=7;
+    let vectorX=5;
     let vectorY=0;
     let snakeWidth=canvas.width/37;
     let snakeHeight=canvas.height/32;
@@ -34,7 +34,7 @@ function all(){
     let foodX=Math.random() * borderWidth;
     let foodY=Math.random() * borderHeight;
     let eatCount=0;
-    let speed=7;
+    let speed=5;
 
 
 let swipeStartX = 0;
@@ -110,12 +110,12 @@ function calcSwipe() {
 }
 
   function refresh(){
-    vectorX=7;
+    vectorX=5;
     vectorY=0;
     snake_array[0].x=rectX;
     snake_array[0].y=rectY;
     drawFood();
-    speed=7;
+    speed=5;
     canvas.style.border="3px solid black";
     canvas.style.boxShadow="none";
   }
@@ -154,7 +154,7 @@ function eatFood(){
    scoreView.innerText=eatCount;
    
    if(eatCount % 5===0){
-    speed+=1.5;
+    speed+=1.2;
    }
 
 }
