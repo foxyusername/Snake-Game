@@ -22,30 +22,31 @@ function all(){
     let left='a';
     let top='w';
     let bottom='s';
-     let vectorX;
      let speed;
+     let vectorX;
  
      if(canvas.width>1500){
       vectorX=11;
       speed=11; 
+      alert(vectorX +'from start');
       snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
    }else if(canvas.width>1200 && canvas.width<1500){
-        vectorX=8;
-        speed=8;
+     vectorX=9;    
+    speed=9;
         snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
       }else if(canvas.width>900 && canvas.width<1200){
-       vectorX=7;
-       speed=7;
+        vectorX=7;
+        speed=7;
       snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
 
       }else if(canvas.width>600 && canvas.width<900){
         vectorX=4;
-        speed=4;
-        snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5];
+         speed=4;
+        snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5];
       }else if(canvas.width<600){
-      vectorX=3;
-     speed=3;
-     snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5];
+       vectorX=3;
+        speed=3;
+     snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5,5];
     }
     let vectorY=0;
     let snakeWidth=canvas.width/37;
@@ -89,12 +90,17 @@ function deathParams(){
   canvas.style.boxShadow="0 0 7px 5px rgb(238, 5, 5)";
   canvas.style.border="2px solid red";
 
-  if(canvas.width>600 && canvas.width<900){
-    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5];
-  }else if(canvas.width<600){
-    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5];
-  }else{
+  if(canvas.width>1500){
     snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
+ }else if(canvas.width>1200 && canvas.width<1500){
+      snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
+    }else if(canvas.width>900 && canvas.width<1200){
+    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6];
+
+    }else if(canvas.width>600 && canvas.width<900){
+    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5];
+  }else if(canvas.width<600){
+    snake_array=[{x:rectX,y:rectY},1,3,4,6,7,5,6,5,5,5,5,5];
   }
 
 }
@@ -171,17 +177,17 @@ function calcSwipe() {
     vectorX=11;
     speed=11; 
  }else if(canvas.width>1200 && canvas.width<1500){
-      vectorX=9;
-      speed=9;
+   vectorX=9;    
+  speed=9;
     }else if(canvas.width>900 && canvas.width<1200){
-     vectorX=7;
      speed=7;
+     vectorX=7;
     }else if(canvas.width>600 && canvas.width<900){
-      vectorX=4;
       speed=4;
+      vectorX=4;
     }else if(canvas.width<600){
-    vectorX=3;
    speed=3;
+   vectorX=3;
   }
     vectorY=0;
     snake_array[0].x=rectX;
@@ -202,8 +208,8 @@ function calcSwipe() {
 function checkEatCount(){
     if(eatCount % 5===0 && eatCount!==0){
         ctx.fillStyle='blue';
-        foodWidth=snakeWidth+20;
-        foodHeight=snakeHeight+10;
+        foodWidth=snakeWidth+15;
+        foodHeight=snakeHeight+13;
         }else{
         ctx.fillStyle='red';        
         foodWidth=snakeWidth;
@@ -222,7 +228,6 @@ function eatFood(){
     foodX=Math.random() * canvas.width;
     foodY=Math.random() * canvas.height;
     eatCount+=1;
-    console.log(speed,vectorX);
    scoreView.innerText=eatCount;
    if(eatCount % 5===0){
     speed+=1;
@@ -292,6 +297,4 @@ window.addEventListener('keydown',()=>{
 window.addEventListener('touchmove',(event)=>{
  event.preventDefault();
 }, { passive: false })
-
-
 }
