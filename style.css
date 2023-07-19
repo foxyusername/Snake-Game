@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#game_div{
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background:linear-gradient(to right,blue,red);
+ flex-direction: column;
+}
+
+#mycanvas{
+    position: relative;
+    width:50%;
+    height: 80vh;
+    background-color: rgb(236, 236, 236);
+    border: 3px solid rgb(9, 9, 9);
+    max-height: 800px;
+}
+
+#lose_game{
+    position: absolute;
+    width:23%;
+    padding: 10px;
+    max-width: calc(2300 * 23/100);
+   height: 250px;
+    border-radius: 20px;
+    border: 3px solid white;
+    box-shadow: 1px 1px 10px black;
+    color: white;
+   background-color: rgb(1, 100, 18);
+   text-align: center;
+   display: none;
+}
+
+#score_view{
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#lose_game h1{
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+#lose_game p{
+    font-size: 1.4rem;
+    margin-top: 40px;
+    font-family: sans-serif;
+}
+
+#lose_game button{
+    width: 120px;
+    height: 30px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    margin-top: 50px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+#lose_game button:hover{
+    transform: scale(1.05);
+}
+
+
+@media only screen and (min-width:400px){
+     
+   #game_div{
+    height: 100vh;
+   }  
+    #mycanvas{
+        width: 95%;
+        height: 57vh;
+    }
+    #lose_game{
+        margin-top: 50px;
+    width: 70%;
+    max-width:calc(475px * 70/100);
+    }
+
+    #lose_game button{
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (min-width:600px){
+    #mycanvas{
+        width: 95%;
+        height: 70vh;
+        max-width: 700px;
+    }
+    #lose_game{
+    width: 47.5%;
+ max-width: calc(700px * 47.5/100);    
+}
+
+   #lose_game button{
+    margin-top: 40px;
+   }
+}
+
+@media only screen and (min-width:1000px){
+    #lose_game{
+    width: 45%;
+    } 
+   #mycanvas{
+    width: 90%;
+   }
+}
+
+@media only screen and (min-width:1200px){
+    #lose_game{
+        width: 23%;
+        height: 250px;
+    }
+    #mycanvas{
+        width: 50%;
+        height: 80vh;
+    }
+}
+
+@media only screen and (min-width:1800px){
+    #score_view{
+    font-size: 6rem;
+    }
+    #mycanvas{
+        max-width: 1000px;
+        width: 60%;
+    }
+    #lose_game{
+        max-width: 370px;
+        width: 50%;
+      height:240px;
+    }
+} 
+ 
+@media only screen and (max-height:550px){
+    #lose_game{
+        transform: scale(0.6);
+        top:50px;
+    }
+    #mycanvas{
+        width: 60%;
+        max-width: calc(900px * 60/100);
+    }
+}
